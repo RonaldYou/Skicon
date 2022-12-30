@@ -8,6 +8,9 @@
         "32": "/images/icon16-2.png",
         "48": "/images/icon48-2.png",
         "128": "/images/icon128-2.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
     }
-    "content_scripts":[{}]
+    
 }

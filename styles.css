@@ -1,0 +1,27 @@
+
+html{
+    min-height: 200px;
+    min-width: 340px;
+    margin: 10px;
+    background: #87ceebff;
+}
+
+h1{
+    text-align: center;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+}
+
+.search{
+    text-align: center;
+}
+
+.search button{
+    border: none;
+    cursor: pointer;
+    background: #eba487ff;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
