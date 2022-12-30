@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Skicon",
-    "description": "Allow skiers to easily check mountain conditions to determine when to ski",
+    "description": "Allow skiers to easily check mountain conditions to determine whether to ski or not",
     "version": "1.0",
     "icons":{
         "16": "/images/icon16-2.png",

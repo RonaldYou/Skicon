@@ -7,21 +7,39 @@ html{
 }
 
 h1{
-    text-align: center;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 300;
+    padding: 10px 0;
+    text-align: center;
 }
 
 .search{
-    text-align: center;
+    margin-left: 2.33em;
+}
+
+#searchBar{
+    font-size: 17px;
+    outline: none;
+    border: none;
+    height: 2.2rem;
+    background: #f5f5f5;
+    border-radius: 1.625rem;
+    padding: 0 2.8rem 0 1rem;
+    width: 13rem;
+    
 }
 
 .search button{
     border: none;
     cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1.625rem;
     background: #eba487ff;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
     font-size: 17px;
+    margin-left: -2.5rem;
 }
+
+.search button:hover {
+    background: rgb(231, 150, 118);
+  }
