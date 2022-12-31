@@ -92,6 +92,10 @@ li .navbar:hover {
     background-color: rgb(230, 111, 64)
 }
 
+li .active:hover {
+    background-color: rgb(230, 111, 64)
+}
+
 .active {
     display: block;
     inline-size:125px;
