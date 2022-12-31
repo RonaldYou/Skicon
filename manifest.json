@@ -10,7 +10,7 @@
         "128": "/images/icon128-2.png"
     },
     "action": {
-        "default_popup": "popup.html"
+        "default_popup": "tow.html"
     }
     
 }
