@@ -70,7 +70,7 @@ li{
 
 .navbar {
     display: block;
-    inline-size:100px;
+    inline-size:125px;
     padding: 4px 3px;
     writing-mode: horizontal-tb;
     color: black;
@@ -94,7 +94,7 @@ li .navbar:hover {
 
 .active {
     display: block;
-    inline-size:100px;
+    inline-size:125px;
     padding: 4px 3px;
     writing-mode: horizontal-tb;
     color: black;
