@@ -65,7 +65,10 @@ h1{
 }
 
 .search{
-    margin-left: 2.15em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: Center
 }
 
 #searchBar{
@@ -76,8 +79,6 @@ h1{
     background: #f5f5f5;
     border-radius: 1.625rem;
     padding: 0 2.8rem 0 1rem;
-    margin-left: auto;
-    margin-right: auto;
     width: 13rem;
 }
 
