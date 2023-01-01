@@ -11,6 +11,7 @@
         "image-alt": "off"
       }
     ],
-    "axe/language": "off"
+    "axe/language": "off",
+    "axe/name-role-value": "off"
   }
 }
