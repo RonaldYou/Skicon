@@ -9,8 +9,9 @@
         "48": "/images/icon48-2.png",
         "128": "/images/icon128-2.png"
     },
+    
     "action": {
-        "default_popup": "tow.html"
+        "default_popup": "index.html"
     }
     
 }
