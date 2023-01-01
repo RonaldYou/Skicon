@@ -1,0 +1,1 @@
+var resortName = sessionStorage.getItem("resortName");
