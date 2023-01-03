@@ -107,6 +107,30 @@ li .active:hover {
     background-color: #e07245ff;
 }
 
+.bottom{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    display:block;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+.bottom h6, .bottom p{
+    display: inline;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.bottom h6{
+    font-weight: 700;
+}
+
+.bottom h1{
+    font-weight: 900;
+    font-size: 19px;
+    line-height: 24px;
+    padding: 7px 0px 5px;
+}
+
 
 
 
