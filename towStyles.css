@@ -110,6 +110,7 @@ li .active:hover {
 .bottom{
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     display:block;
+    float: left;
     padding-left: 20px;
     padding-top: 5px;
 }
@@ -124,7 +125,46 @@ li .active:hover {
     font-weight: 700;
 }
 
+.bottom p{
+    color: rgb(76, 42, 230);
+    font-family: Consolas, monaco, monospace; 
+    font-size: 18px;
+    font-weight: 700;
+}
+
 .bottom h1{
+    font-weight: 900;
+    font-size: 19px;
+    line-height: 24px;
+    padding: 7px 0px 5px;
+}
+
+.top{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    display:block;
+    float: right;
+    padding-right: 35px;
+    padding-top: 5px;
+}
+
+.top h6, .top p{
+    display: inline;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.top h6{
+    font-weight: 700;
+}
+
+.top p{
+    color: rgb(76, 42, 230);
+    font-family: Consolas, monaco, monospace; 
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.top h1{
     font-weight: 900;
     font-size: 19px;
     line-height: 24px;
