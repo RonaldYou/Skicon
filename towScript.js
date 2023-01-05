@@ -44,6 +44,7 @@ fetch(url,options)
     console.log(data);
     displayBottomb1(data);
 	displayBottomb2(data);
+	displayBottomb3(data);
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 
@@ -97,4 +98,24 @@ function displayBottomb2(data){
 	// const bottomDiv = document.getElementById("bottom");
 	// const highOf =
 }
+
+function displayBottomb3(data){
+	const bottom = data.forecast;
+	var sum = 0;
+	var counter = 0;
+	for(let i in bottom){
+		sum += parseInt(data.forecast[i].windChill);
+		counter++;
+	}
+	var avg = Math.round(sum/counter);
+	var strAvg = avg.toString();
+	var finAvg = strAvg + "°c";
+	console.log("fin avg");
+	console.log(finAvg);
+	hideLoading();
+	document.getElementById("b3").innerHTML = finAvg;
+	// const bottomDiv = document.getElementById("bottom");
+	// const highOf =
+}
+
 
