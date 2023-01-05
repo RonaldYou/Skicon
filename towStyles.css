@@ -113,7 +113,6 @@ li .active:hover {
     float: left;
     padding-left: 20px;
     padding-top: 5px;
-    width: 200px;
 }
 
 .bottom h6, .bottom p, .bottom span, .stage{
@@ -131,7 +130,7 @@ li .active:hover {
     font-family: Consolas, monaco, monospace; 
     font-size: 18px;
     font-weight: 700;
-    margin-left: -22px;
+    margin-left: -23px;
 }
 
 .bottom h1{

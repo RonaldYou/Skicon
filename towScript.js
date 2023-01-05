@@ -45,6 +45,7 @@ fetch(url,options)
     displayBottomb1(data);
 	displayBottomb2(data);
 	displayBottomb3(data);
+	displayBottomb4(data);
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 
@@ -109,11 +110,24 @@ function displayBottomb3(data){
 	}
 	var avg = Math.round(sum/counter);
 	var strAvg = avg.toString();
-	var finAvg = strAvg + "°c";
-	console.log("fin avg");
-	console.log(finAvg);
+	var finAvg = strAvg + "°C";
+	console.log("sum" + sum);
+	console.log("counter" + counter);
 	hideLoading();
 	document.getElementById("b3").innerHTML = finAvg;
+	// const bottomDiv = document.getElementById("bottom");
+	// const highOf =
+}
+
+function displayBottomb4(data){
+	const bottom = data.forecast;
+	var snowSum = 0;
+	for(let i in bottom){
+		snowSum += parseInt(data.forecast[i].snow);
+	}
+	var finSnowSum = snowSum + "cm";
+	hideLoading();
+	document.getElementById("b4").innerHTML = finSnowSum;
 	// const bottomDiv = document.getElementById("bottom");
 	// const highOf =
 }
