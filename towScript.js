@@ -17,6 +17,16 @@ let url = part1 + part2 + part3;
 // 	.then(response => console.log(response))
 // 	.catch(err => console.error(err));
 
+
+var loaderContainer = document.getElementsByClassName('dot-flashing')[0];
+const displayLoading = () => {
+    loaderContainer.style.display = "block";
+};
+
+const hideLoading = () => {
+    loaderContainer.style.display = "none";
+};
+displayLoading();
 fetch(url,options)
   .then((response) => {
     if (response.ok) {
@@ -27,6 +37,7 @@ fetch(url,options)
   })
   .then(data => {
     console.log(data);
+	hideLoading();
     displayBottom(data)
   })
   .catch((error) => console.error("FETCH ERROR:", error));
@@ -51,6 +62,8 @@ function displayBottom(data){
 	// console.log(minTempIndex);
 	// console.log(minTemp);
 	console.log(data.forecast[minTempIndex].maxTemp);
+	document.getElementById("b1").innerHTML = data.forecast[minTempIndex].maxTemp;
 	// const bottomDiv = document.getElementById("bottom");
 	// const highOf =
 }
+
