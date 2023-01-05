@@ -18,13 +18,18 @@ let url = part1 + part2 + part3;
 // 	.catch(err => console.error(err));
 
 
-var loaderContainer = document.getElementsByClassName('dot-flashing')[0];
+var loaderContainer = document.getElementsByClassName('dot-flashing');
+
 const displayLoading = () => {
-    loaderContainer.style.display = "block";
+	for (var i=0;i<loaderContainer.length;i+=1){
+		loaderContainer[i].style.display = 'block';
+	}
 };
 
 const hideLoading = () => {
-    loaderContainer.style.display = "none";
+    for (var i=0;i<loaderContainer.length;i+=1){
+		loaderContainer[i].style.display = 'none';
+	}
 };
 displayLoading();
 fetch(url,options)
@@ -37,12 +42,37 @@ fetch(url,options)
   })
   .then(data => {
     console.log(data);
-	hideLoading();
-    displayBottom(data)
+    displayBottomb1(data);
+	displayBottomb2(data);
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 
-function displayBottom(data){
+function displayBottomb1(data){
+	const bottom = data.forecast;
+	var rawMaxTemp = data.forecast[0].maxTemp;
+	var maxTemp = rawMaxTemp.slice(0,-2);
+	var maxTempIndex = 0;
+	for(let i in bottom){
+		var rawTemp = data.forecast[i].maxTemp;
+		var temp = rawTemp.slice(0,-2);
+		if (parseInt(maxTemp) < parseInt(temp)){
+			console.log(temp);
+			console.log(maxTemp);
+			maxTemp = temp;
+			maxTempIndex = i;
+		}
+	}
+	// console.log("final");
+	// console.log(minTempIndex);
+	// console.log(minTemp);
+	console.log(data.forecast[maxTempIndex].maxTemp);
+	hideLoading();
+	document.getElementById("b1").innerHTML = data.forecast[maxTempIndex].maxTemp;
+	// const bottomDiv = document.getElementById("bottom");
+	// const highOf =
+}
+
+function displayBottomb2(data){
 	const bottom = data.forecast;
 	var rawMinTemp = data.forecast[0].maxTemp;
 	var minTemp = rawMinTemp.slice(0,-2);
@@ -62,7 +92,8 @@ function displayBottom(data){
 	// console.log(minTempIndex);
 	// console.log(minTemp);
 	console.log(data.forecast[minTempIndex].maxTemp);
-	document.getElementById("b1").innerHTML = data.forecast[minTempIndex].maxTemp;
+	hideLoading();
+	document.getElementById("b2").innerHTML = data.forecast[minTempIndex].maxTemp;
 	// const bottomDiv = document.getElementById("bottom");
 	// const highOf =
 }
