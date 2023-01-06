@@ -37,6 +37,8 @@ fetch(url,options)
     if (response.ok) {
       return response.json();
     } else {
+		hideLoading();
+		document.getElementById("b1").innerHTML = "error";
       throw new Error("NETWORK RESPONSE ERROR");
     }
   })
@@ -48,6 +50,7 @@ fetch(url,options)
 	displayBottomb4(data);
 	displayBottomb5(data);
 	displayBottomb6(data);
+	displayBottomb7(data);
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 
@@ -64,9 +67,6 @@ function displayBottomb1(data){
 			maxTempIndex = i;
 		}
 	}
-	// console.log("final");
-	// console.log(minTempIndex);
-	// console.log(minTemp);
 	console.log(data.forecast[maxTempIndex].maxTemp);
 	hideLoading();
 	document.getElementById("b1").innerHTML = data.forecast[maxTempIndex].maxTemp;
@@ -146,5 +146,22 @@ function displayBottomb6(data){
 	var finAvg = strAvg + "km/h";
 	hideLoading();
 	document.getElementById("b6").innerHTML = finAvg;
+}
+
+function displayBottomb7(data){
+	const bottom = data.forecast;
+	var maxWind = parseInt(data.forecast[0].windSpeed);
+	var maxWindIndex = 0;
+	for(let i in bottom){
+		var wind = parseInt(data.forecast[i].windSpeed);
+		if (maxWind < wind){
+			maxWind = wind;
+			maxWindIndex = i;
+		}
+	}
+	console.log("maxWind" + maxWind);
+	hideLoading();
+	document.getElementById("b7").innerHTML = data.forecast[maxWindIndex].windSpeed;
+
 }
 

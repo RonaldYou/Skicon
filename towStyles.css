@@ -110,29 +110,30 @@ li .active:hover {
 .bottom{
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     display:block;
-    block-size: 150px;
-    writing-mode: horizontal-tb;
     float: left;
     padding-left: 12px;
     padding-top: 5px;
 }
 
-.bottom h6, .bottom p, .bottom span, .stage, .dot-flashing, .data{
-    display: inline-block;
-    font-size: 16px;
+.main{
+    display: flex;
+    flex-direction: row;
+}
+
+.bottom .dat{
+    font-weight: 700;
     line-height: 24px;
 }
 
-.bottom h6, .data{
-    font-weight: 700;
-}
-
 .bottom p{
+    position:relative;
+    bottom: 1px;
     color: rgb(76, 42, 230);
+    line-height: 24px;
     font-family: Consolas, monaco, monospace; 
     font-size: 18px;
     font-weight: 700;
-    margin-left: -23px;
+    margin-left: -14px;
 }
 
 .bottom h1{
@@ -176,7 +177,9 @@ li .active:hover {
 }
 
 .stage{
+    padding-top: 6px;
     padding-left: 20px;  
+    
 }
 .dot-flashing {
     position: relative;
