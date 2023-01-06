@@ -49,17 +49,38 @@ fetch(url,options)
 
 function displaysc1(data){
     hideLoading();
-	document.getElementById("sc1").innerHTML = data.botSnowDepth;
+    var botDepth;
+    if(data.botSnowDepth == null){
+        botDepth = "N/A";
+    }
+    else{
+        botDepth = data.botSnowDepth;
+    }
+	document.getElementById("sc1").innerHTML = botDepth;
 }
 
 function displaysc2(data){
     hideLoading();
-	document.getElementById("sc2").innerHTML = data.topSnowDepth;
+    var topDepth;
+    if(data.topSnowDepth == null){
+        topDepth = "N/A";
+    }
+    else{
+        topDepth = data.topSnowDepth;
+    }
+	document.getElementById("sc2").innerHTML = topDepth;
 }
 
 function displaysc3(data){
     hideLoading();
-	document.getElementById("sc3").innerHTML = data.freshSnowfall;
+    var freshSnow;
+    if(data.freshSnowfall == null){
+        freshSnow = "N/A";
+    }
+    else{
+        freshSnow = data.freshSnowfall;
+    }
+	document.getElementById("sc3").innerHTML = freshSnow;
 }
 
 function displaysc4(data){
