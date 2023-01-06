@@ -47,6 +47,7 @@ fetch(url,options)
 	displayBottomb3(data);
 	displayBottomb4(data);
 	displayBottomb5(data);
+	displayBottomb6(data);
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 
@@ -132,5 +133,18 @@ function displayBottomb5(data){
 	document.getElementById("b5").innerHTML = finRainSum;
 }
 
-
+function displayBottomb6(data){
+	const bottom = data.forecast;
+	var sum = 0;
+	var counter = 0;
+	for(let i in bottom){
+		sum += parseInt(data.forecast[i].windSpeed);
+		counter++;
+	}
+	var avg = Math.round(sum/counter);
+	var strAvg = avg.toString();
+	var finAvg = strAvg + "km/h";
+	hideLoading();
+	document.getElementById("b6").innerHTML = finAvg;
+}
 
