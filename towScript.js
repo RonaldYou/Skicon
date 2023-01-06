@@ -46,6 +46,7 @@ fetch(url,options)
 	displayBottomb2(data);
 	displayBottomb3(data);
 	displayBottomb4(data);
+	displayBottomb5(data);
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 
@@ -58,8 +59,6 @@ function displayBottomb1(data){
 		var rawTemp = data.forecast[i].maxTemp;
 		var temp = rawTemp.slice(0,-2);
 		if (parseInt(maxTemp) < parseInt(temp)){
-			console.log(temp);
-			console.log(maxTemp);
 			maxTemp = temp;
 			maxTempIndex = i;
 		}
@@ -70,8 +69,7 @@ function displayBottomb1(data){
 	console.log(data.forecast[maxTempIndex].maxTemp);
 	hideLoading();
 	document.getElementById("b1").innerHTML = data.forecast[maxTempIndex].maxTemp;
-	// const bottomDiv = document.getElementById("bottom");
-	// const highOf =
+
 }
 
 function displayBottomb2(data){
@@ -84,20 +82,13 @@ function displayBottomb2(data){
 		var rawTemp = data.forecast[i].maxTemp;
 		var temp = rawTemp.slice(0,-2);
 		if (parseInt(minTemp) > parseInt(temp)){
-			console.log(temp);
-			console.log(minTemp);
 			minTemp = temp;
 			minTempIndex = i;
 		}
 	}
-	// console.log("final");
-	// console.log(minTempIndex);
-	// console.log(minTemp);
 	console.log(data.forecast[minTempIndex].maxTemp);
 	hideLoading();
 	document.getElementById("b2").innerHTML = data.forecast[minTempIndex].maxTemp;
-	// const bottomDiv = document.getElementById("bottom");
-	// const highOf =
 }
 
 function displayBottomb3(data){
@@ -111,25 +102,35 @@ function displayBottomb3(data){
 	var avg = Math.round(sum/counter);
 	var strAvg = avg.toString();
 	var finAvg = strAvg + "°C";
-	console.log("sum" + sum);
-	console.log("counter" + counter);
 	hideLoading();
 	document.getElementById("b3").innerHTML = finAvg;
-	// const bottomDiv = document.getElementById("bottom");
-	// const highOf =
 }
 
 function displayBottomb4(data){
 	const bottom = data.forecast;
-	var snowSum = 0;
+	var snowSum = 0.0;
 	for(let i in bottom){
-		snowSum += parseInt(data.forecast[i].snow);
+		snowSum += parseFloat(data.forecast[i].snow);
 	}
-	var finSnowSum = snowSum + "cm";
+	var snowSumTrunc = snowSum.toFixed(1);
+	var snowSumInter =  snowSumTrunc.toString();
+	var finSnowSum = snowSumInter + "cm";
 	hideLoading();
 	document.getElementById("b4").innerHTML = finSnowSum;
-	// const bottomDiv = document.getElementById("bottom");
-	// const highOf =
 }
+
+function displayBottomb5(data){
+	const bottom = data.forecast;
+	var rainSum = 0.0;
+	for(let i in bottom){
+		rainSum += parseFloat(data.forecast[i].rain);
+	}
+	var rainSumTrunc = rainSum.toFixed(1);
+	var rainSumInter =  rainSumTrunc.toString();
+	var finRainSum = rainSumInter + "mm";
+	hideLoading();
+	document.getElementById("b5").innerHTML = finRainSum;
+}
+
 
 
