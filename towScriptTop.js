@@ -1,3 +1,4 @@
+
 var resortName = sessionStorage.getItem("resortName");
 
 const optionsT = {

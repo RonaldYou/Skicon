@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="towStyles.css">
+        <link rel="stylesheet" href="cscStyles.css">
         
     </head>
     <body>
@@ -13,11 +13,18 @@
             <li><a class ="navbar" href="#tw">Tomorrow's weather forecast</a></li>
             <li class="icon"><a href="index.html"><img src="/images/icon128-2.png" width = "32" height = "32"></a></li>
         </ul>
-        <h1>Snow Conditions</h1>
-        
+        <div class="sc">
+            <h1>Snow Conditions</h1>
+            <div class="main"><div class="dat">Botom snow depth: </div> <div class="stage"><span class="dot-flashing"></span></div> <p id="sc1"></p> </div>
+            <div class="main"><div class="dat">Top snow depth: </div> <div class="stage"><span class="dot-flashing"></span></div> <p id="sc2"></p></div><br>
+            <div class="main"><div class="dat">Fresh snow: </div> <div class="stage"><span class="dot-flashing"></span></div> <p id="sc3"></p></div><br>
+            <div class="main"><div class="dat">Last snow fall date: </div> <div class="stage"><span class="dot-flashing"></span></div> <p id="sc4"></p></div>
+        </div>
+
         <div class="location">
             <p>Mountain:</p>
-            <!-- <p id="loc"></p> -->
+            <p id="loc"></p>
         </div>
+        <script src="cscScript.js"></script>
     </body>
 </html>

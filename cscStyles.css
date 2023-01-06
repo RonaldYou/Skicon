@@ -107,12 +107,97 @@ li .active:hover {
     background-color: #e07245ff;
 }
 
-h1{
+
+.sc{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    display:block;
+    float: left;
+    padding-left: 11px;
+    padding-top: 1px;
+}
+
+.sc .dat{
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.sc p{
+    position:relative;
+    bottom: 1px;
+    color: rgb(76, 42, 230);
+    line-height: 24px;
+    font-family: Consolas, monaco, monospace; 
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: -14px;
+}
+
+.sc h1{
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 900;
     font-size: 19px;
     line-height: 24px;
     padding: 7px 0px 4px;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+}
+
+.stage{
+    padding-top: 6px;
+    padding-left: 20px;  
+    
+}
+.dot-flashing{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: rgb(76, 42, 230);
+    color: rgb(76, 42, 230);
+    animation: dot-flashing 1s infinite linear alternate;
+    animation-delay: 0.5s;
+}
+
+.dot-flashing::before, .dot-flashing::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+
+.dot-flashing::before {
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: rgb(76, 42, 230);
+    color: rgb(76, 42, 230);
+    animation: dot-flashing 1s infinite alternate;
+    animation-delay: 0s;
+}
+
+.dot-flashing::after {
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: rgb(76, 42, 230);
+    color: rgb(76, 42, 230);
+    animation: dot-flashing 1s infinite alternate;
+    animation-delay: 1s;
+  
+}
+  
+@keyframes dot-flashing {
+    0% {
+      background-color: rgb(76, 42, 230);
+    }
+    50%, 100% {
+      background-color: rgba(152, 128, 255, 0.2);
+    }
 }
 
 .location{
@@ -127,8 +212,8 @@ h1{
     flex-direction: row;
 }
 
-/* #loc{
+#loc{
     font: 12px;
     color: rgb(76, 42, 230);
     padding-left:2px;
-} */
+}

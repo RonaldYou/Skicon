@@ -221,7 +221,6 @@ li .active:hover {
   
 }
   
-  
 @keyframes dot-flashing {
     0% {
       background-color: rgb(76, 42, 230);
