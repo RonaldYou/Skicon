@@ -119,7 +119,7 @@ li .active:hover {
     float: left;
     padding-left: 12px;
     padding-top: 5px;
-    margin-right:50px;
+    /* margin-right:35px; */
 }
 
 .bottom .dat{
@@ -146,9 +146,10 @@ li .active:hover {
 }
 
 .top{
+    position: absolute;
+    left: 223px;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    display:block;
-    padding-left: 24px;
+    padding-left: 0px;
     padding-top: 5px;
 }
 
