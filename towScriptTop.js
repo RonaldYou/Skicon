@@ -1,17 +1,17 @@
 var resortName = sessionStorage.getItem("resortName");
 
-const options = {
+const optionsT = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': 'b3cf3ce7bemsh68f6de2ad6f5ffap108c6bjsn1ca8044ab34f',
 		'X-RapidAPI-Host': 'ski-resort-forecast.p.rapidapi.com'
 	}
 };
-let part1 = "https://ski-resort-forecast.p.rapidapi.com/";
-let part2 = resortName;
-let part3 = "/hourly?units=m&el=bot&c=true";
+let part1T = "https://ski-resort-forecast.p.rapidapi.com/";
+let part2T = resortName;
+let part3T = "/hourly?units=m&el=top&c=true";
 
-let url = part1 + part2 + part3;
+let urlT = part1T + part2T + part3T;
 // fetch(url, options)
 // 	.then(response => response.json())
 // 	.then(response => console.log(response))
@@ -20,46 +20,46 @@ let url = part1 + part2 + part3;
 
 var loaderContainer = document.getElementsByClassName('dot-flashing');
 
-const displayLoading = () => {
+const displayLoadingT = () => {
 	for (var i=0;i<loaderContainer.length;i+=1){
 		loaderContainer[i].style.display = 'block';
 	}
 };
 
-const hideLoading = () => {
+const hideLoadingT = () => {
     for (var i=0;i<loaderContainer.length;i+=1){
 		loaderContainer[i].style.display = 'none';
 	}
 };
-displayLoading();
-fetch(url,options)
+displayLoadingT();
+fetch(urlT,optionsT)
   .then((response) => {
     if (response.ok) {
       return response.json();
     } else {
-		hideLoading();
-		document.getElementById("b1").innerHTML = "error";
+		hideLoadingT();
+		document.getElementById("t1").innerHTML = "error";
       throw new Error("NETWORK RESPONSE ERROR");
     }
   })
   .then(data => {
     console.log(data);
-    displayBottomb1(data);
-	displayBottomb2(data);
-	displayBottomb3(data);
-	displayBottomb4(data);
-	displayBottomb5(data);
-	displayBottomb6(data);
-	displayBottomb7(data);
+    displayTopt1(data);
+	displayTopt2(data);
+	displayTopt3(data);
+	displayTopt4(data);
+	displayTopt5(data);
+	displayTopt6(data);
+	displayTopt7(data);
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 
-function displayBottomb1(data){
-	const bottom = data.forecast;
+function displayTopt1(data){
+	const top = data.forecast;
 	var rawMaxTemp = data.forecast[0].maxTemp;
 	var maxTemp = rawMaxTemp.slice(0,-2);
 	var maxTempIndex = 0;
-	for(let i in bottom){
+	for(let i in top){
 		var rawTemp = data.forecast[i].maxTemp;
 		var temp = rawTemp.slice(0,-2);
 		if (parseInt(maxTemp) < parseInt(temp)){
@@ -68,17 +68,17 @@ function displayBottomb1(data){
 		}
 	}
 	console.log(data.forecast[maxTempIndex].maxTemp);
-	hideLoading();
-	document.getElementById("b1").innerHTML = data.forecast[maxTempIndex].maxTemp;
+	hideLoadingT();
+	document.getElementById("t1").innerHTML = data.forecast[maxTempIndex].maxTemp;
 }
 
-function displayBottomb2(data){
-	const bottom = data.forecast;
+function displayTopt2(data){
+	const top = data.forecast;
 	var rawMinTemp = data.forecast[0].maxTemp;
 	var minTemp = rawMinTemp.slice(0,-2);
 	var minTempIndex = 0;
 	console.log(minTemp);
-	for(let i in bottom){
+	for(let i in top){
 		var rawTemp = data.forecast[i].maxTemp;
 		var temp = rawTemp.slice(0,-2);
 		if (parseInt(minTemp) > parseInt(temp)){
@@ -87,71 +87,71 @@ function displayBottomb2(data){
 		}
 	}
 	console.log(data.forecast[minTempIndex].maxTemp);
-	hideLoading();
-	document.getElementById("b2").innerHTML = data.forecast[minTempIndex].maxTemp;
+	hideLoadingT();
+	document.getElementById("t2").innerHTML = data.forecast[minTempIndex].maxTemp;
 }
 
-function displayBottomb3(data){
-	const bottom = data.forecast;
+function displayTopt3(data){
+	const top = data.forecast;
 	var sum = 0;
 	var counter = 0;
-	for(let i in bottom){
+	for(let i in top){
 		sum += parseInt(data.forecast[i].windChill);
 		counter++;
 	}
 	var avg = Math.round(sum/counter);
 	var strAvg = avg.toString();
 	var finAvg = strAvg + "°C";
-	hideLoading();
-	document.getElementById("b3").innerHTML = finAvg;
+	hideLoadingT();
+	document.getElementById("t3").innerHTML = finAvg;
 }
 
-function displayBottomb4(data){
-	const bottom = data.forecast;
+function displayTopt4(data){
+	const top = data.forecast;
 	var snowSum = 0.0;
-	for(let i in bottom){
+	for(let i in top){
 		snowSum += parseFloat(data.forecast[i].snow);
 	}
 	var snowSumTrunc = snowSum.toFixed(1);
 	var snowSumInter =  snowSumTrunc.toString();
 	var finSnowSum = snowSumInter + "cm";
-	hideLoading();
-	document.getElementById("b4").innerHTML = finSnowSum;
+	hideLoadingT();
+	document.getElementById("t4").innerHTML = finSnowSum;
 }
 
-function displayBottomb5(data){
-	const bottom = data.forecast;
+function displayTopt5(data){
+	const top = data.forecast;
 	var rainSum = 0.0;
-	for(let i in bottom){
+	for(let i in top){
 		rainSum += parseFloat(data.forecast[i].rain);
 	}
 	var rainSumTrunc = rainSum.toFixed(1);
 	var rainSumInter =  rainSumTrunc.toString();
 	var finRainSum = rainSumInter + "mm";
-	hideLoading();
-	document.getElementById("b5").innerHTML = finRainSum;
+	hideLoadingT();
+	document.getElementById("t5").innerHTML = finRainSum;
 }
 
-function displayBottomb6(data){
-	const bottom = data.forecast;
+function displayTopt6(data){
+	const top = data.forecast;
 	var sum = 0;
 	var counter = 0;
-	for(let i in bottom){
+	for(let i in top){
 		sum += parseInt(data.forecast[i].windSpeed);
 		counter++;
 	}
 	var avg = Math.round(sum/counter);
 	var strAvg = avg.toString();
 	var finAvg = strAvg + "km/h";
-	hideLoading();
-	document.getElementById("b6").innerHTML = finAvg;
+	hideLoadingT();
+	document.getElementById("t6").innerHTML = finAvg;
 }
 
-function displayBottomb7(data){
-	const bottom = data.forecast;
+function displayTopt7(data){
+	const top = data.forecast;
 	var maxWind = parseInt(data.forecast[0].windSpeed);
 	var maxWindIndex = 0;
-	for(let i in bottom){
+	for(let i in top){
 		var wind = parseInt(data.forecast[i].windSpeed);
 		if (maxWind < wind){
 			maxWind = wind;
@@ -159,8 +159,8 @@ function displayBottomb7(data){
 		}
 	}
 	console.log("maxWind" + maxWind);
-	hideLoading();
-	document.getElementById("b7").innerHTML = data.forecast[maxWindIndex].windSpeed;
+	hideLoadingT();
+	document.getElementById("t7").innerHTML = data.forecast[maxWindIndex].windSpeed;
 }
 
 

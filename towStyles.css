@@ -107,17 +107,19 @@ li .active:hover {
     background-color: #e07245ff;
 }
 
+
+.main{
+    display: flex;
+    flex-direction: row;
+}
+
 .bottom{
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     display:block;
     float: left;
     padding-left: 12px;
     padding-top: 5px;
-}
-
-.main{
-    display: flex;
-    flex-direction: row;
+    margin-right:50px;
 }
 
 .bottom .dat{
@@ -146,27 +148,24 @@ li .active:hover {
 .top{
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     display:block;
-    float: right;
-    padding-right: 35px;
+    padding-left: 24px;
     padding-top: 5px;
 }
 
-
-.top h6, .top p{
-    display: inline;
-    font-size: 16px;
+.top .dat{
+    font-weight: 700;
     line-height: 24px;
 }
 
-.top h6{
-    font-weight: 700;
-}
-
 .top p{
+    position:relative;
+    bottom: 1px;
     color: rgb(76, 42, 230);
+    line-height: 24px;
     font-family: Consolas, monaco, monospace; 
     font-size: 18px;
     font-weight: 700;
+    margin-left: -14px;
 }
 
 .top h1{
@@ -181,7 +180,7 @@ li .active:hover {
     padding-left: 20px;  
     
 }
-.dot-flashing {
+.dot-flashing{
     position: relative;
     width: 10px;
     height: 10px;
