@@ -51,6 +51,7 @@ fetch(url,options)
 	displayBottomb5(data);
 	displayBottomb6(data);
 	displayBottomb7(data);
+	displayLoc(data);
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 
@@ -161,6 +162,13 @@ function displayBottomb7(data){
 	console.log("maxWind" + maxWind);
 	hideLoading();
 	document.getElementById("b7").innerHTML = data.forecast[maxWindIndex].windSpeed;
+}
+
+function displayLoc(data){
+	var region = data.basicInfo.region;
+	var name = data.basicInfo.name;
+	var finalMountain = region + ", " + name;
+	document.getElementById("loc").innerHTML = finalMountain;
 }
 
 

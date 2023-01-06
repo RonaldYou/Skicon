@@ -18,17 +18,17 @@ let urlT = part1T + part2T + part3T;
 // 	.catch(err => console.error(err));
 
 
-var loaderContainer = document.getElementsByClassName('dot-flashing');
+var loaderContainerT = document.getElementsByClassName('dot-flashingt');
 
 const displayLoadingT = () => {
-	for (var i=0;i<loaderContainer.length;i+=1){
-		loaderContainer[i].style.display = 'block';
+	for (var i=0;i<loaderContainerT.length;i+=1){
+		loaderContainerT[i].style.display = 'block';
 	}
 };
 
 const hideLoadingT = () => {
-    for (var i=0;i<loaderContainer.length;i+=1){
-		loaderContainer[i].style.display = 'none';
+    for (var i=0;i<loaderContainerT.length;i+=1){
+		loaderContainerT[i].style.display = 'none';
 	}
 };
 displayLoadingT();
