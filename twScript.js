@@ -3,7 +3,7 @@ var resortName = sessionStorage.getItem("resortName");
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'b3cf3ce7bemsh68f6de2ad6f5ffap108c6bjsn1ca8044ab34f',
+		'X-RapidAPI-Key': apiKey,
 		'X-RapidAPI-Host': 'ski-resort-forecast.p.rapidapi.com'
 	}
 };
