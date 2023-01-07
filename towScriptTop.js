@@ -1,6 +1,5 @@
-
 var resortName = sessionStorage.getItem("resortName");
-
+ 
 const optionsT = {
 	method: 'GET',
 	headers: {
@@ -43,125 +42,125 @@ fetch(urlT,optionsT)
       throw new Error("NETWORK RESPONSE ERROR");
     }
   })
-  .then(data => {
-    console.log(data);
-    displayTopt1(data);
-	displayTopt2(data);
-	displayTopt3(data);
-	displayTopt4(data);
-	displayTopt5(data);
-	displayTopt6(data);
-	displayTopt7(data);
+  .then(dataT => {
+    console.log(dataT);
+    displayTopt1(dataT);
+	displayTopt2(dataT);
+	displayTopt3(dataT);
+	displayTopt4(dataT);
+	displayTopt5(dataT);
+	displayTopt6(dataT);
+	displayTopt7(dataT);
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 
-function displayTopt1(data){
-	const top = data.forecast;
-	var rawMaxTemp = data.forecast[0].maxTemp;
-	var maxTemp = rawMaxTemp.slice(0,-2);
-	var maxTempIndex = 0;
+function displayTopt1(dataT){
+	const top = dataT.forecast;
+	var rawMaxTempT = dataT.forecast[0].maxTemp;
+	var maxTempT = rawMaxTempT.slice(0,-2);
+	var maxTempIndexT = 0;
 	for(let i in top){
-		var rawTemp = data.forecast[i].maxTemp;
-		var temp = rawTemp.slice(0,-2);
-		if (parseInt(maxTemp) < parseInt(temp)){
-			maxTemp = temp;
-			maxTempIndex = i;
+		var rawTempT = dataT.forecast[i].maxTemp;
+		var tempT = rawTempT.slice(0,-2);
+		if (parseInt(maxTempT) < parseInt(tempT)){
+			maxTempT = tempT;
+			maxTempIndexT = i;
 		}
 	}
-	console.log(data.forecast[maxTempIndex].maxTemp);
+	console.log(dataT.forecast[maxTempIndexT].maxTemp);
 	hideLoadingT();
-	document.getElementById("t1").innerHTML = data.forecast[maxTempIndex].maxTemp;
+	document.getElementById("t1").innerHTML = dataT.forecast[maxTempIndexT].maxTemp;
 }
 
-function displayTopt2(data){
-	const top = data.forecast;
-	var rawMinTemp = data.forecast[0].maxTemp;
-	var minTemp = rawMinTemp.slice(0,-2);
-	var minTempIndex = 0;
-	console.log(minTemp);
+function displayTopt2(dataT){
+	const top = dataT.forecast;
+	var rawMinTempT = dataT.forecast[0].maxTemp;
+	var minTempT = rawMinTempT.slice(0,-2);
+	var minTempIndexT = 0;
+	console.log(minTempT);
 	for(let i in top){
-		var rawTemp = data.forecast[i].maxTemp;
-		var temp = rawTemp.slice(0,-2);
-		if (parseInt(minTemp) > parseInt(temp)){
-			minTemp = temp;
-			minTempIndex = i;
+		var rawTempT = dataT.forecast[i].maxTemp;
+		var tempT = rawTempT.slice(0,-2);
+		if (parseInt(minTempT) > parseInt(tempT)){
+			minTempT = tempT;
+			minTempIndexT = i;
 		}
 	}
-	console.log(data.forecast[minTempIndex].maxTemp);
+	console.log(dataT.forecast[minTempIndexT].maxTemp);
 	hideLoadingT();
-	document.getElementById("t2").innerHTML = data.forecast[minTempIndex].maxTemp;
+	document.getElementById("t2").innerHTML = dataT.forecast[minTempIndexT].maxTemp;
 }
 
-function displayTopt3(data){
-	const top = data.forecast;
-	var sum = 0;
-	var counter = 0;
+function displayTopt3(dataT){
+	const top = dataT.forecast;
+	var sumT = 0;
+	var counterT = 0;
 	for(let i in top){
-		sum += parseInt(data.forecast[i].windChill);
-		counter++;
+		sumT += parseInt(dataT.forecast[i].windChill);
+		counterT++;
 	}
-	var avg = Math.round(sum/counter);
-	var strAvg = avg.toString();
-	var finAvg = strAvg + "°C";
+	var avgT = Math.round(sumT/counterT);
+	var strAvgT = avgT.toString();
+	var finAvgT = strAvgT + "°C";
 	hideLoadingT();
-	document.getElementById("t3").innerHTML = finAvg;
+	document.getElementById("t3").innerHTML = finAvgT;
 }
 
-function displayTopt4(data){
-	const top = data.forecast;
-	var snowSum = 0.0;
+function displayTopt4(dataT){
+	const top = dataT.forecast;
+	var snowSumT = 0.0;
 	for(let i in top){
-		snowSum += parseFloat(data.forecast[i].snow);
+		snowSumT += parseFloat(dataT.forecast[i].snow);
 	}
-	var snowSumTrunc = snowSum.toFixed(1);
-	var snowSumInter =  snowSumTrunc.toString();
-	var finSnowSum = snowSumInter + "cm";
+	var snowSumTruncT = snowSumT.toFixed(1);
+	var snowSumInterT =  snowSumTruncT.toString();
+	var finSnowSumT = snowSumInterT + "cm";
 	hideLoadingT();
-	document.getElementById("t4").innerHTML = finSnowSum;
+	document.getElementById("t4").innerHTML = finSnowSumT;
 }
 
-function displayTopt5(data){
-	const top = data.forecast;
-	var rainSum = 0.0;
+function displayTopt5(dataT){
+	const top = dataT.forecast;
+	var rainSumT = 0.0;
 	for(let i in top){
-		rainSum += parseFloat(data.forecast[i].rain);
+		rainSumT += parseFloat(dataT.forecast[i].rain);
 	}
-	var rainSumTrunc = rainSum.toFixed(1);
-	var rainSumInter =  rainSumTrunc.toString();
-	var finRainSum = rainSumInter + "mm";
+	var rainSumTruncT = rainSumT.toFixed(1);
+	var rainSumInterT =  rainSumTruncT.toString();
+	var finRainSumT = rainSumInterT + "mm";
 	hideLoadingT();
-	document.getElementById("t5").innerHTML = finRainSum;
+	document.getElementById("t5").innerHTML = finRainSumT;
 }
 
-function displayTopt6(data){
-	const top = data.forecast;
-	var sum = 0;
-	var counter = 0;
+function displayTopt6(dataT){
+	const top = dataT.forecast;
+	var sumTT = 0;
+	var counterTT = 0;
 	for(let i in top){
-		sum += parseInt(data.forecast[i].windSpeed);
-		counter++;
+		sumTT += parseInt(dataT.forecast[i].windSpeed);
+		counterTT++;
 	}
-	var avg = Math.round(sum/counter);
-	var strAvg = avg.toString();
-	var finAvg = strAvg + "km/h";
+	var avgTT = Math.round(sumTT/counterTT);
+	var strAvgTT = avgTT.toString();
+	var finAvgTT = strAvgTT + "km/h";
 	hideLoadingT();
-	document.getElementById("t6").innerHTML = finAvg;
+	document.getElementById("t6").innerHTML = finAvgTT;
 }
 
-function displayTopt7(data){
-	const top = data.forecast;
-	var maxWind = parseInt(data.forecast[0].windSpeed);
-	var maxWindIndex = 0;
+function displayTopt7(dataT){
+	const top = dataT.forecast;
+	var maxWindT = parseInt(dataT.forecast[0].windSpeed);
+	var maxWindIndexT = 0;
 	for(let i in top){
-		var wind = parseInt(data.forecast[i].windSpeed);
-		if (maxWind < wind){
-			maxWind = wind;
-			maxWindIndex = i;
+		var windT = parseInt(dataT.forecast[i].windSpeed);
+		if (maxWindT < windT){
+			maxWindT = windT;
+			maxWindIndexT = i;
 		}
 	}
-	console.log("maxWind" + maxWind);
+	console.log("maxWind" + maxWindT);
 	hideLoadingT();
-	document.getElementById("t7").innerHTML = data.forecast[maxWindIndex].windSpeed;
+	document.getElementById("t7").innerHTML = dataT.forecast[maxWindIndexT].windSpeed;
 }
 
 
